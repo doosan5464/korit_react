@@ -14,3 +14,30 @@ td
 더 하고싶으면 아무거나 추가
 
 */
+import React, { useState } from 'react';
+import Signin from './App7/Signin';
+import Signup from './App7/Signup';
+
+function App7(props) {
+        const [path, setPath] = useState("signin");
+        const [userList, setUserList] = useState([]);
+
+        const handlePageButton = (path) => {
+            setPath(path);
+        }
+        
+    return (
+        <div>
+            <button onClick={() => handlePageButton("signin")}>조회</button>
+            <button onClick={() => handlePageButton("signup")}>등록</button>
+            {   
+                path === "signin" && <Signin userList={userList}/> 
+            }
+            {
+                path === "signup" && <Signup userList={userList} setUserList={setUserList}/> 
+            }
+        </div>
+    );
+}
+
+export default App7;
