@@ -14,13 +14,20 @@ function App2() {
     console.log(number);
 
     const handleIncreaseOnClick = () => {
-        setNum(num + 1); // setter 역할. 위에서 비구조 할당으로 받아 옴
+        if (num < 9) {
+            setNum(num + 1);
+        }
+    }
+    const handleDecreaseOnClick = () => {
+        if (num > 0) {
+            setNum(num - 1);
+        }
     }
 
     return <>
         <h1>{num}</h1>
         <button onClick={handleIncreaseOnClick}>1 증가</button>
-        <button>1 감소</button>
+        <button onClick={handleDecreaseOnClick}>1 감소</button>
     </>
 }
 export default App2;
