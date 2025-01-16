@@ -22,7 +22,7 @@ function Signup({userList, setUserList}) { //
                 signupInputValue,
             ]);
     
-            alert("가입완료.");
+            alert("등록완료.");
     
             setSignupInputValue({
                 bookname: "",
@@ -32,7 +32,7 @@ function Signup({userList, setUserList}) { //
                 category: "",
             });
         };
-
+        console.log(userList);
 
     return (
         <div>
