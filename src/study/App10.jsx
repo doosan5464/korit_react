@@ -13,9 +13,9 @@ function App10(props) {
         return unmount; // 언마운트는 잘 안씀
     }
     // seEffect는 무조건 1번은 실행
-    useEffect(mount, []); // 첫 번째 매개변수로 함수가 들어감, return도 함수가 들어감
+    // useEffect(mount, []); // 첫 번째 매개변수로 함수가 들어감, return도 함수가 들어감
     // 여기도 마찬가지로 ,[]가 의존성임. 
-
+    useEffect(mount);
 
     useEffect(() => {
         console.log(num1);
@@ -42,6 +42,7 @@ function App10(props) {
         // setNum2(num1 + 100); -> 비동기때문에 110이 차이나게 됨
     }
 
+    console.log("???????");
 
     return (
         <div>
